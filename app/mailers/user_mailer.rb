@@ -6,6 +6,6 @@ class UserMailer < ApplicationMailer
     Rails.logger.debug "DEBUG: UserMailer: env: " + Rails.env
     Rails.logger.debug "DEBUG: UserMailer: owner_email: " + Rails.application.secrets.owner_email
     #Rails.logger.debug "DEBUG: UserMailer: contact: " + contact
-    mail(to: Rails.application.secrets.owner_email, from: @contact.email, :subject => "Website Contact")
+    #mail(to: Rails.application.secrets.owner_email, from: @contact.email, :subject => "Website Contact")
   end
 end
