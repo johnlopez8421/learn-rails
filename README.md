@@ -2,7 +2,8 @@
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
-TODO
+TODO:
+  Figure out why shell variables are !working
 
 Things you may want to cover:
 
@@ -12,7 +13,8 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
-  application.yml contains the following keys:
+  secrets.yml contains the following keys as a workaround.
+
     ################################
       sendgrid_username: xxxx
       sendgrid_password: xxxx
