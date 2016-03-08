@@ -35,6 +35,21 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
+  config.action_mailer.smtp_settings = {
+    address: "smtp.sendgrid.net",
+    port: 587,
+    domain: "immense-fortress-96456.herokuapp.com", #Rails.application.secrets.domain_name,
+    authentication: "plain",
+    user_name: Rails.application.secrets.email_provider_username,
+    password: Rails.application.secrets.email_provider_password
+}
+  # ActionMailer Config
+  config.action_mailer.default_url_options = { :host => "immense-fortress-96456.herokuapp.com" }#Rails.application.secrets.domain_name }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_deliveries = true
+
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
