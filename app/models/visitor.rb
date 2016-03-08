@@ -7,6 +7,7 @@ class Visitor
   def subscribe
     mailchimp = Gibbon::Request.new(api_key: ENV["MAILCHIMP_API_KEY"])
     list_id = ENV["MAILCHIMP_LIST_ID"]
+    Rails.logger.debug "DEBUG: Visitor: list_id: " + list_id
     result = mailchimp.lists(list_id).members.create(
     body: {
       email_address: self.email,
